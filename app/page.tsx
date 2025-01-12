@@ -1,4 +1,4 @@
-import EmergencyFundCalculator from '@/components/EmergencyFundCalculator'
+import EmergencyFundCalculator from '../components/EmergencyFundCalculator'
 
 export default function Home() {
   return (
