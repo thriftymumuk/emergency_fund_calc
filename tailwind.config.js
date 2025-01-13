@@ -50,6 +50,14 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Add your brand colors here
+        brand: {
+          'green': '#2b614a',
+          'pink': '#d4848f',
+          'green-secondary': '#86a397',
+          'green-light': '#e8ede9',
+          'pink-light': '#f7e4e7',
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
