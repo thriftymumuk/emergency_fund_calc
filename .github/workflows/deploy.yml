@@ -21,6 +21,9 @@ jobs:
         
       - name: Build
         run: npm run build
+        
+      - name: Static HTML export
+        run: npx next export
 
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll
