@@ -3,7 +3,7 @@
 3:HL["/emergency_fund_calc/_next/static/media/95a978e26cc29d74-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 4:HL["/emergency_fund_calc/_next/static/media/f5e5067cd50e2c82-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 5:HL["/emergency_fund_calc/_next/static/css/33fc54beb0b1cd68.css","style",{"crossOrigin":""}]
-0:["UCfdcbs_AhdBzp57YJ9xe",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L6",[[["$","link","0",{"rel":"stylesheet","href":"/emergency_fund_calc/_next/static/css/33fc54beb0b1cd68.css","precedence":"next","crossOrigin":""}]],"$L7"]]]]
+0:["I_jO1ckxamRKag3am-yVR",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L6",[[["$","link","0",{"rel":"stylesheet","href":"/emergency_fund_calc/_next/static/css/33fc54beb0b1cd68.css","precedence":"next","crossOrigin":""}]],"$L7"]]]]
 8:I{"id":1443,"chunks":["272:static/chunks/webpack-625b8fba5c415b7f.js","971:static/chunks/fd9d1056-152363d0773c6479.js","864:static/chunks/864-edadc2c807d4792f.js"],"name":"","async":false}
 9:I{"id":8639,"chunks":["272:static/chunks/webpack-625b8fba5c415b7f.js","971:static/chunks/fd9d1056-152363d0773c6479.js","864:static/chunks/864-edadc2c807d4792f.js"],"name":"","async":false}
 b:I{"id":2503,"chunks":["931:static/chunks/app/page-bea671ed34d0a273.js"],"name":"","async":false}
