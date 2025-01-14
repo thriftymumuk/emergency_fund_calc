@@ -95,7 +95,7 @@ const EmergencyFundCalculator = () => {
             </div>
           </CardHeader>
           <CardContent className="p-6 pt-6">
-            <div className="mb-4 text-brand-green-secondary italic">Please enter your monthly essential expenses below:</div>
+            <div className="mb-4 text-brand-green-secondary italic">Please enter your essential monthly expenses below:</div>
             <div className="space-y-3">
               {Object.entries(expenses).map(([category, value]) => (
                 <div key={category} className="flex items-center space-x-4">
@@ -227,6 +227,7 @@ const EmergencyFundCalculator = () => {
                         value={riskFactors.children || ''}
                         onChange={e => setRiskFactors(prev => ({...prev, children: parseInt(e.target.value) || 0}))}
                         className="w-16 pl-2 pr-2 py-1 border border-brand-green-secondary rounded"
+                        placeholder="0"
                       />
                     </label>
                     <label className="flex items-center gap-2">
@@ -237,6 +238,7 @@ const EmergencyFundCalculator = () => {
                         value={riskFactors.pets || ''}
                         onChange={e => setRiskFactors(prev => ({...prev, pets: parseInt(e.target.value) || 0}))}
                         className="w-16 pl-2 pr-2 py-1 border border-brand-green-secondary rounded"
+                        placeholder="0"
                       />
                     </label>
                   </div>
