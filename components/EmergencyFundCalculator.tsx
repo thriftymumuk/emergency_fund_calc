@@ -8,10 +8,13 @@ const EmergencyFundCalculator = () => {
     "mortgage/rent": 0,
     groceries:0,
     "council tax": 0,
-    food: 0,
-    transport: 0,
-    insurance: 0,
-    other: 0
+    "fuel/transport": 0,
+    "TV/internet": 0,
+    water: 0,
+    "gas and electric": 0,
+    chilcare:0,
+    insurance:0,
+    other:0
   });
 
   const [months, setMonths] = useState(3);
