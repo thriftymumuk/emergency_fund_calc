@@ -65,8 +65,9 @@ const EmergencyFundCalculator = () => {
               className="flex-1 pl-4 pr-8 py-2 border border-brand-green-secondary rounded focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent"
             >
               <option value={3}>3 months</option>
+              <option value={4}>4 months</option>
+              <option value={5}>5 months</option>
               <option value={6}>6 months</option>
-              <option value={12}>12 months</option>
             </select>
           </div>
           
