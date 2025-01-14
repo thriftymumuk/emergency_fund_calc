@@ -6,8 +6,8 @@ import { Card, CardHeader, CardTitle, CardContent } from './ui/card';
 const EmergencyFundCalculator = () => {
   const [expenses, setExpenses] = useState({
     mortgage: 0,
-    childcare:0,
-    utilities: 0,
+    groceries:0,
+    council tax: 0,
     food: 0,
     transport: 0,
     insurance: 0,
