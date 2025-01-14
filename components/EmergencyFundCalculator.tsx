@@ -35,7 +35,7 @@ const EmergencyFundCalculator = () => {
       <CardHeader className="bg-brand-green-light border-b border-brand-green-secondary flex items-center justify-between p-4">
         <CardTitle className="text-brand-green text-2xl font-semibold">Emergency Fund Calculator</CardTitle>
         <img 
-          src="/TMlogo.png" 
+          src="./TMlogo.png" 
           alt="Thrifty Mum UK Logo" 
           className="h-16 w-auto"
         />
