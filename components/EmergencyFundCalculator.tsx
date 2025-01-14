@@ -35,7 +35,7 @@ const EmergencyFundCalculator = () => {
       <CardHeader className="bg-brand-green-light border-b border-brand-green-secondary">
         <CardTitle className="text-brand-green text-2xl font-semibold">Emergency Fund Calculator</CardTitle>
       </CardHeader>
-      <CardContent className="p-6 pt-8">
+      <CardContent className="p-6 pt-6">
         <div className="space-y-6">
           {Object.entries(expenses).map(([category, value]) => (
             <div key={category} className="flex items-center space-x-4">
