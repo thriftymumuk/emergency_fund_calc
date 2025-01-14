@@ -34,7 +34,7 @@ const EmergencyFundCalculator = () => {
        <img 
          src="./TMlogo_long.png" 
          alt="Thrifty Mum UK Logo" 
-         className="h-24 w-auto"
+         className="h-32 w-auto"
        />
      </div>
      <Card className="w-full max-w-2xl mx-auto bg-white">
