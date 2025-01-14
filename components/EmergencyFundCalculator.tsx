@@ -214,7 +214,7 @@ const EmergencyFundCalculator = () => {
                         checked={riskFactors.healthCondition}
                         onChange={e => setRiskFactors(prev => ({...prev, healthCondition: e.target.checked}))}
                       />
-                      Health Condition (+2)
+                      Work-Limiting Health (+2)
                     </label>
                   </div>
                   
