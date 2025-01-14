@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from './ui/card';
 
@@ -18,7 +17,6 @@ const EmergencyFundCalculator = () => {
   });
 
   const [months, setMonths] = useState(3);
-
   const totalMonthly = Object.values(expenses).reduce((sum, expense) => sum + expense, 0);
   const totalEmergencyFund = totalMonthly * months;
 
@@ -32,12 +30,14 @@ const EmergencyFundCalculator = () => {
 
   return (
     <Card className="w-full max-w-2xl mx-auto bg-white">
-      <CardHeader className="bg-brand-green-light border-b border-brand-green-secondary flex items-center gap-4 p-4">
+      <div className="flex justify-center p-4">
         <img 
           src="./TMlogo.png" 
           alt="Thrifty Mum UK Logo" 
           className="h-16 w-auto"
         />
+      </div>
+      <CardHeader className="bg-brand-green-light border-b border-brand-green-secondary p-4">
         <CardTitle className="text-brand-green text-2xl font-semibold">Emergency Fund Calculator</CardTitle>
       </CardHeader>
       <CardContent className="p-6 pt-6">
