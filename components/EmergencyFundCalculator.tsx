@@ -1,8 +1,6 @@
 'use client';
-
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from './ui/card';
-import { Switch } from './ui/switch';
 
 const EmergencyFundCalculator = () => {
   const [showAdvanced, setShowAdvanced] = useState(false);
@@ -87,7 +85,12 @@ const EmergencyFundCalculator = () => {
               <CardTitle className="text-brand-green text-2xl font-semibold">Emergency Fund Calculator</CardTitle>
               <div className="flex items-center gap-2">
                 <span className="text-sm text-brand-green">Advanced Mode</span>
-                <Switch checked={showAdvanced} onCheckedChange={setShowAdvanced} />
+                <input 
+                  type="checkbox"
+                  checked={showAdvanced}
+                  onChange={(e) => setShowAdvanced(e.target.checked)}
+                  className="h-4 w-4"
+                />
               </div>
             </div>
           </CardHeader>
@@ -149,7 +152,6 @@ const EmergencyFundCalculator = () => {
                       />
                       Self Employed (+1)
                     </label>
-                    {/* Add more risk factors here */}
                   </div>
                   
                   <div className="flex items-center gap-4">
