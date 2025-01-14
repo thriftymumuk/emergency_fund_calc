@@ -251,9 +251,9 @@ const EmergencyFundCalculator = () => {
               )}
               
               <div className="mt-8 p-4 bg-brand-pink-light rounded-lg">
-                <div className="text-brand-green font-medium">Monthly Expenses: £{totalMonthly.toFixed(2)}</div>
+                <div className="text-brand-green font-medium">Monthly Expenses: £{totalMonthly.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
                 <div className="text-xl font-semibold text-brand-pink mt-2">
-                  Target Emergency Fund: £{totalEmergencyFund.toFixed(2)}
+                  Target Emergency Fund: £{totalEmergencyFund.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                 </div>
               </div>
             </div>
