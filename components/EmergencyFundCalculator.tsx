@@ -36,6 +36,7 @@ const EmergencyFundCalculator = () => {
         <CardTitle className="text-brand-green text-2xl font-semibold">Emergency Fund Calculator</CardTitle>
       </CardHeader>
       <CardContent className="p-6 pt-6">
+        <div className="mb-4 text-brand-green-secondary italic">Please enter your monthly essential expenses below:</div>
         <div className="space-y-6">
           {Object.entries(expenses).map(([category, value]) => (
             <div key={category} className="flex items-center space-x-4">
