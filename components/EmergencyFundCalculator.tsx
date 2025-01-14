@@ -13,6 +13,7 @@ const EmergencyFundCalculator = () => {
    "gas and electric": 0,
    chilcare:0,
    insurance:0,
+   phone:0,
    other:0
  });
 
