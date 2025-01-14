@@ -30,7 +30,8 @@ const EmergencyFundCalculator = () => {
 
  return (
    <div>
-     <div className="flex justify-center">
+     <div className="flex flex-col gap-4">
+      <div className="flex justify-center">
        <img 
          src="./TMlogo_long.png" 
          alt="Thrifty Mum UK Logo" 
