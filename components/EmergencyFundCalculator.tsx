@@ -152,6 +152,70 @@ const EmergencyFundCalculator = () => {
                       />
                       Self Employed (+1)
                     </label>
+                    <label className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        checked={riskFactors.zeroHour}
+                        onChange={e => setRiskFactors(prev => ({...prev, zeroHour: e.target.checked}))}
+                      />
+                      Zero-Hour Contract (+1)
+                    </label>
+                    <label className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        checked={riskFactors.adultCaring}
+                        onChange={e => setRiskFactors(prev => ({...prev, adultCaring: e.target.checked}))}
+                      />
+                      Adult Caring Duties (+1)
+                    </label>
+                    <label className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        checked={riskFactors.homeowner}
+                        onChange={e => setRiskFactors(prev => ({...prev, homeowner: e.target.checked}))}
+                      />
+                      Homeowner (+1)
+                    </label>
+                    <label className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        checked={riskFactors.renting}
+                        onChange={e => setRiskFactors(prev => ({...prev, renting: e.target.checked}))}
+                      />
+                      Renting (+1)
+                    </label>
+                    <label className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        checked={riskFactors.carRequired}
+                        onChange={e => setRiskFactors(prev => ({...prev, carRequired: e.target.checked}))}
+                      />
+                      Car Required for Work (+1)
+                    </label>
+                    <label className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        checked={riskFactors.highRiskJob}
+                        onChange={e => setRiskFactors(prev => ({...prev, highRiskJob: e.target.checked}))}
+                      />
+                      High-Risk Job (+1)
+                    </label>
+                    <label className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        checked={riskFactors.redundancyRisk}
+                        onChange={e => setRiskFactors(prev => ({...prev, redundancyRisk: e.target.checked}))}
+                      />
+                      Redundancy Risk (+1)
+                    </label>
+                    <label className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        checked={riskFactors.healthCondition}
+                        onChange={e => setRiskFactors(prev => ({...prev, healthCondition: e.target.checked}))}
+                      />
+                      Health Condition (+2)
+                    </label>
                   </div>
                   
                   <div className="flex items-center gap-4">
