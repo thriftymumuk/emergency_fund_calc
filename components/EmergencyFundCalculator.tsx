@@ -32,7 +32,7 @@ const EmergencyFundCalculator = () => {
    <div className="container mx-auto mt-0">
      <div className="flex flex-col gap-2">
        <img 
-         src="./TMlogo_long.png" 
+         src="./TMlogo.png" 
          alt="Thrifty Mum UK Logo" 
          className="h-48 w-auto mx-auto"
        />
