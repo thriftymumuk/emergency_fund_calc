@@ -224,7 +224,7 @@ const EmergencyFundCalculator = () => {
                       <input
                         type="number"
                         min="0"
-                        value={riskFactors.children}
+                        value={riskFactors.children || ''}
                         onChange={e => setRiskFactors(prev => ({...prev, children: parseInt(e.target.value) || 0}))}
                         className="w-16 pl-2 pr-2 py-1 border border-brand-green-secondary rounded"
                       />
@@ -234,7 +234,7 @@ const EmergencyFundCalculator = () => {
                       <input
                         type="number"
                         min="0"
-                        value={riskFactors.pets}
+                        value={riskFactors.pets || ''}
                         onChange={e => setRiskFactors(prev => ({...prev, pets: parseInt(e.target.value) || 0}))}
                         className="w-16 pl-2 pr-2 py-1 border border-brand-green-secondary rounded"
                       />
