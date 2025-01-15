@@ -72,188 +72,188 @@ const EmergencyFundCalculator = () => {
   const totalEmergencyFund = totalMonthly * (showAdvanced ? getRecommendedMonths() : months);
 
   return (
-        <Card className="w-full max-w-2xl mx-auto bg-white">
-          <CardHeader className="bg-brand-green-light border-b border-brand-green-secondary p-4">
-            <div className="flex justify-between items-center">
-              <CardTitle className="text-brand-green text-2xl font-semibold">Emergency Fund Calculator</CardTitle>
-              <div className="flex items-center gap-2">
-                <span className="text-sm text-brand-green">Advanced Mode</span>
-                <input 
-                  type="checkbox"
-                  checked={showAdvanced}
-                  onChange={(e) => setShowAdvanced(e.target.checked)}
-                  className="h-4 w-4"
-                />
-              </div>
+    <div className="w-full">
+      <Card className="w-full max-w-2xl mx-auto bg-white">
+        <CardHeader className="bg-brand-green-light border-b border-brand-green-secondary p-4">
+          <div className="flex justify-between items-center">
+            <CardTitle className="text-brand-green text-2xl font-semibold">Emergency Fund Calculator</CardTitle>
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-brand-green">Advanced Mode</span>
+              <input 
+                type="checkbox"
+                checked={showAdvanced}
+                onChange={(e) => setShowAdvanced(e.target.checked)}
+                className="h-4 w-4"
+              />
             </div>
-          </CardHeader>
-          <CardContent className="p-6 pt-6">
-            <div className="mb-4 text-brand-green-secondary italic">Please enter your essential monthly expenses below:</div>
-            <div className="space-y-3">
-              {Object.entries(expenses).map(([category, value]) => (
-                <div key={category} className="flex items-center space-x-4">
-                  <label className="w-32 font-medium text-brand-green capitalize">
-                    {category}:
+          </div>
+        </CardHeader>
+        <CardContent className="p-6 pt-6">
+          <div className="mb-4 text-brand-green-secondary italic">Please enter your essential monthly expenses below:</div>
+          <div className="space-y-3">
+            {Object.entries(expenses).map(([category, value]) => (
+              <div key={category} className="flex items-center space-x-4">
+                <label className="w-32 font-medium text-brand-green capitalize">
+                  {category}:
+                </label>
+                <div className="relative flex-1">
+                  <span className="absolute left-3 top-2 text-brand-green-secondary">£</span>
+                  <input
+                    type="number"
+                    value={value || ''}
+                    onChange={(e) => handleExpenseChange(category, e.target.value)}
+                    className="w-full pl-8 pr-4 py-2 border border-brand-green-secondary rounded focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent"
+                    placeholder="0"
+                  />
+                </div>
+              </div>
+            ))}
+
+            {!showAdvanced ? (
+              <div className="flex items-center space-x-4 mt-6">
+                <label className="w-32 font-medium text-brand-green">
+                  Months:
+                </label>
+                <select
+                  value={months}
+                  onChange={(e) => setMonths(parseInt(e.target.value))}
+                  className="flex-1 pl-4 pr-8 py-2 border border-brand-green-secondary rounded focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent"
+                >
+                  <option value={3}>3 months</option>
+                  <option value={4}>4 months</option>
+                  <option value={5}>5 months</option>
+                  <option value={6}>6 months</option>
+                </select>
+              </div>
+            ) : (
+              <div className="space-y-4 mt-6 p-4 bg-brand-green-light rounded">
+                <h3 className="font-medium text-brand-green mb-1">Risk Assessment</h3>
+                <div className="mb-1 text-brand-green-secondary italic">
+                  Select factors that apply to calculate a recommended emergency fund length. This is a guide based on common risk factors.
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      checked={riskFactors.singleIncome}
+                      onChange={e => setRiskFactors(prev => ({...prev, singleIncome: e.target.checked}))}
+                    />
+                    Single Income
                   </label>
-                  <div className="relative flex-1">
-                    <span className="absolute left-3 top-2 text-brand-green-secondary">£</span>
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      checked={riskFactors.selfEmployed}
+                      onChange={e => setRiskFactors(prev => ({...prev, selfEmployed: e.target.checked}))}
+                    />
+                    Self Employed
+                  </label>
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      checked={riskFactors.zeroHour}
+                      onChange={e => setRiskFactors(prev => ({...prev, zeroHour: e.target.checked}))}
+                    />
+                    Zero-Hour Contract
+                  </label>
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      checked={riskFactors.adultCaring}
+                      onChange={e => setRiskFactors(prev => ({...prev, adultCaring: e.target.checked}))}
+                    />
+                    Adult Caring Duties
+                  </label>
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      checked={riskFactors.homeowner}
+                      onChange={e => setRiskFactors(prev => ({...prev, homeowner: e.target.checked}))}
+                    />
+                    Homeowner
+                  </label>
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      checked={riskFactors.renting}
+                      onChange={e => setRiskFactors(prev => ({...prev, renting: e.target.checked}))}
+                    />
+                    Renting
+                  </label>
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      checked={riskFactors.carRequired}
+                      onChange={e => setRiskFactors(prev => ({...prev, carRequired: e.target.checked}))}
+                    />
+                    Car Required for Work
+                  </label>
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      checked={riskFactors.highRiskJob}
+                      onChange={e => setRiskFactors(prev => ({...prev, highRiskJob: e.target.checked}))}
+                    />
+                    High-Risk Job
+                  </label>
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      checked={riskFactors.redundancyRisk}
+                      onChange={e => setRiskFactors(prev => ({...prev, redundancyRisk: e.target.checked}))}
+                    />
+                    Redundancy Risk
+                  </label>
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      checked={riskFactors.healthCondition}
+                      onChange={e => setRiskFactors(prev => ({...prev, healthCondition: e.target.checked}))}
+                    />
+                    Work-Limiting Health
+                  </label>
+                </div>
+                
+                <div className="flex items-center gap-4">
+                  <label className="flex items-center gap-2">
+                    Number of children:
                     <input
                       type="number"
-                      value={value || ''}
-                      onChange={(e) => handleExpenseChange(category, e.target.value)}
-                      className="w-full pl-8 pr-4 py-2 border border-brand-green-secondary rounded focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent"
+                      min="0"
+                      value={riskFactors.children || ''}
+                      onChange={e => setRiskFactors(prev => ({...prev, children: parseInt(e.target.value) || 0}))}
+                      className="w-16 pl-2 pr-2 py-1 border border-brand-green-secondary rounded"
                       placeholder="0"
                     />
-                  </div>
-                </div>
-              ))}
-
-              {!showAdvanced ? (
-                <div className="flex items-center space-x-4 mt-6">
-                  <label className="w-32 font-medium text-brand-green">
-                    Months:
                   </label>
-                  <select
-                    value={months}
-                    onChange={(e) => setMonths(parseInt(e.target.value))}
-                    className="flex-1 pl-4 pr-8 py-2 border border-brand-green-secondary rounded focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent"
-                  >
-                    <option value={3}>3 months</option>
-                    <option value={4}>4 months</option>
-                    <option value={5}>5 months</option>
-                    <option value={6}>6 months</option>
-                  </select>
+                  <label className="flex items-center gap-2">
+                    Number of pets:
+                    <input
+                      type="number"
+                      min="0"
+                      value={riskFactors.pets || ''}
+                      onChange={e => setRiskFactors(prev => ({...prev, pets: parseInt(e.target.value) || 0}))}
+                      className="w-16 pl-2 pr-2 py-1 border border-brand-green-secondary rounded"
+                      placeholder="0"
+                    />
+                  </label>
                 </div>
-              ) : (
-                <div className="space-y-4 mt-6 p-4 bg-brand-green-light rounded">
-                  <h3 className="font-medium text-brand-green mb-1">Risk Assessment</h3>
-                  <div className="mb-1 text-brand-green-secondary italic">
-                    Select factors that apply to calculate a recommended emergency fund length. This is a guide based on common risk factors.
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <label className="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        checked={riskFactors.singleIncome}
-                        onChange={e => setRiskFactors(prev => ({...prev, singleIncome: e.target.checked}))}
-                      />
-                      Single Income
-                    </label>
-                    <label className="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        checked={riskFactors.selfEmployed}
-                        onChange={e => setRiskFactors(prev => ({...prev, selfEmployed: e.target.checked}))}
-                      />
-                      Self Employed
-                    </label>
-                    <label className="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        checked={riskFactors.zeroHour}
-                        onChange={e => setRiskFactors(prev => ({...prev, zeroHour: e.target.checked}))}
-                      />
-                      Zero-Hour Contract
-                    </label>
-                    <label className="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        checked={riskFactors.adultCaring}
-                        onChange={e => setRiskFactors(prev => ({...prev, adultCaring: e.target.checked}))}
-                      />
-                      Adult Caring Duties
-                    </label>
-                    <label className="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        checked={riskFactors.homeowner}
-                        onChange={e => setRiskFactors(prev => ({...prev, homeowner: e.target.checked}))}
-                      />
-                      Homeowner
-                    </label>
-                    <label className="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        checked={riskFactors.renting}
-                        onChange={e => setRiskFactors(prev => ({...prev, renting: e.target.checked}))}
-                      />
-                      Renting
-                    </label>
-                    <label className="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        checked={riskFactors.carRequired}
-                        onChange={e => setRiskFactors(prev => ({...prev, carRequired: e.target.checked}))}
-                      />
-                      Car Required for Work
-                    </label>
-                    <label className="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        checked={riskFactors.highRiskJob}
-                        onChange={e => setRiskFactors(prev => ({...prev, highRiskJob: e.target.checked}))}
-                      />
-                      High-Risk Job
-                    </label>
-                    <label className="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        checked={riskFactors.redundancyRisk}
-                        onChange={e => setRiskFactors(prev => ({...prev, redundancyRisk: e.target.checked}))}
-                      />
-                      Redundancy Risk
-                    </label>
-                    <label className="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        checked={riskFactors.healthCondition}
-                        onChange={e => setRiskFactors(prev => ({...prev, healthCondition: e.target.checked}))}
-                      />
-                      Work-Limiting Health
-                    </label>
-                  </div>
-                  
-                  <div className="flex items-center gap-4">
-                    <label className="flex items-center gap-2">
-                      Number of children:
-                      <input
-                        type="number"
-                        min="0"
-                        value={riskFactors.children || ''}
-                        onChange={e => setRiskFactors(prev => ({...prev, children: parseInt(e.target.value) || 0}))}
-                        className="w-16 pl-2 pr-2 py-1 border border-brand-green-secondary rounded"
-                        placeholder="0"
-                      />
-                    </label>
-                    <label className="flex items-center gap-2">
-                      Number of pets:
-                      <input
-                        type="number"
-                        min="0"
-                        value={riskFactors.pets || ''}
-                        onChange={e => setRiskFactors(prev => ({...prev, pets: parseInt(e.target.value) || 0}))}
-                        className="w-16 pl-2 pr-2 py-1 border border-brand-green-secondary rounded"
-                        placeholder="0"
-                      />
-                    </label>
-                  </div>
 
-                  <div className="mt-4">
-                    <p className="text-brand-green">Recommended Months: {getRecommendedMonths()}</p>
-                  </div>
-                </div>
-              )}
-              
-              <div className="mt-8 p-4 bg-brand-pink-light rounded-lg">
-                <div className="text-brand-green font-medium">Monthly Expenses: £{totalMonthly.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
-                <div className="text-xl font-semibold text-brand-pink mt-2">
-                  Target Emergency Fund: £{totalEmergencyFund.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                <div className="mt-4">
+                  <p className="text-brand-green">Recommended Months: {getRecommendedMonths()}</p>
                 </div>
               </div>
+            )}
+            
+            <div className="mt-8 p-4 bg-brand-pink-light rounded-lg">
+              <div className="text-brand-green font-medium">Monthly Expenses: £{totalMonthly.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+              <div className="text-xl font-semibold text-brand-pink mt-2">
+                Target Emergency Fund: £{totalEmergencyFund.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+              </div>
             </div>
-          </CardContent>
-        </Card>
-      </div>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 };
