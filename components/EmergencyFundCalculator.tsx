@@ -144,7 +144,7 @@ const EmergencyFundCalculator = () => {
                         checked={riskFactors.singleIncome}
                         onChange={e => setRiskFactors(prev => ({...prev, singleIncome: e.target.checked}))}
                       />
-                      Single Income (+2)
+                      Single Income
                     </label>
                     <label className="flex items-center gap-2">
                       <input
@@ -152,7 +152,7 @@ const EmergencyFundCalculator = () => {
                         checked={riskFactors.selfEmployed}
                         onChange={e => setRiskFactors(prev => ({...prev, selfEmployed: e.target.checked}))}
                       />
-                      Self Employed (+1)
+                      Self Employed
                     </label>
                     <label className="flex items-center gap-2">
                       <input
@@ -160,7 +160,7 @@ const EmergencyFundCalculator = () => {
                         checked={riskFactors.zeroHour}
                         onChange={e => setRiskFactors(prev => ({...prev, zeroHour: e.target.checked}))}
                       />
-                      Zero-Hour Contract (+1)
+                      Zero-Hour Contract
                     </label>
                     <label className="flex items-center gap-2">
                       <input
@@ -168,7 +168,7 @@ const EmergencyFundCalculator = () => {
                         checked={riskFactors.adultCaring}
                         onChange={e => setRiskFactors(prev => ({...prev, adultCaring: e.target.checked}))}
                       />
-                      Adult Caring Duties (+1)
+                      Adult Caring Duties
                     </label>
                     <label className="flex items-center gap-2">
                       <input
@@ -176,7 +176,7 @@ const EmergencyFundCalculator = () => {
                         checked={riskFactors.homeowner}
                         onChange={e => setRiskFactors(prev => ({...prev, homeowner: e.target.checked}))}
                       />
-                      Homeowner (+1)
+                      Homeowner
                     </label>
                     <label className="flex items-center gap-2">
                       <input
@@ -184,7 +184,7 @@ const EmergencyFundCalculator = () => {
                         checked={riskFactors.renting}
                         onChange={e => setRiskFactors(prev => ({...prev, renting: e.target.checked}))}
                       />
-                      Renting (+1)
+                      Renting
                     </label>
                     <label className="flex items-center gap-2">
                       <input
@@ -192,7 +192,7 @@ const EmergencyFundCalculator = () => {
                         checked={riskFactors.carRequired}
                         onChange={e => setRiskFactors(prev => ({...prev, carRequired: e.target.checked}))}
                       />
-                      Car Required for Work (+1)
+                      Car Required for Work
                     </label>
                     <label className="flex items-center gap-2">
                       <input
@@ -200,7 +200,7 @@ const EmergencyFundCalculator = () => {
                         checked={riskFactors.highRiskJob}
                         onChange={e => setRiskFactors(prev => ({...prev, highRiskJob: e.target.checked}))}
                       />
-                      High-Risk Job (+1)
+                      High-Risk Job
                     </label>
                     <label className="flex items-center gap-2">
                       <input
@@ -208,7 +208,7 @@ const EmergencyFundCalculator = () => {
                         checked={riskFactors.redundancyRisk}
                         onChange={e => setRiskFactors(prev => ({...prev, redundancyRisk: e.target.checked}))}
                       />
-                      Redundancy Risk (+1)
+                      Redundancy Risk
                     </label>
                     <label className="flex items-center gap-2">
                       <input
@@ -216,7 +216,7 @@ const EmergencyFundCalculator = () => {
                         checked={riskFactors.healthCondition}
                         onChange={e => setRiskFactors(prev => ({...prev, healthCondition: e.target.checked}))}
                       />
-                      Work-Limiting Health (+2)
+                      Work-Limiting Health
                     </label>
                   </div>
                   
@@ -246,7 +246,6 @@ const EmergencyFundCalculator = () => {
                   </div>
 
                   <div className="mt-4">
-                    <p className="text-brand-green">Risk Score: {calculatePoints()} points</p>
                     <p className="text-brand-green">Recommended Months: {getRecommendedMonths()}</p>
                   </div>
                 </div>
