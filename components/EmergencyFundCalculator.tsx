@@ -134,7 +134,9 @@ const EmergencyFundCalculator = () => {
               ) : (
                 <div className="space-y-4 mt-6 p-4 bg-brand-green-light rounded">
                   <h3 className="font-medium text-brand-green mb-4">Risk Assessment</h3>
-                  
+                  <div className="mb-4 text-brand-green-secondary italic">
+                    Select factors that apply to calculate a recommended emergency fund length. This is a guide based on common risk factors.
+                  </div>
                   <div className="grid grid-cols-2 gap-4">
                     <label className="flex items-center gap-2">
                       <input
